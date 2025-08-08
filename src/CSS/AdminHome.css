@@ -1,0 +1,12 @@
+.stats{
+    display: flex;
+    gap: 1rem;
+    
+}
+.stats div{
+    padding: 1rem;
+    flex: 1;
+    background: linear-gradient(to right, #dab4d7, #b87777);
+    border-radius: 10px;
+
+}

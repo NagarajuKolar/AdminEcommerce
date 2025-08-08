@@ -1,0 +1,62 @@
+.addprod{
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    text-align: center;
+    background-color: #0e0e5e;
+    font-size: 20px;
+    font-weight: 500;
+    color: white;
+margin: auto;
+display: block;
+}
+
+.addside{
+    width: 350px;
+    height: 100vh;
+    top: 0px;
+    position: fixed;
+    overflow-y: auto;
+    background-color: whitesmoke;
+    right: 0;
+    padding: 12px 16px;
+    
+}
+.form-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: red;
+}
+
+.product-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.product-form input,
+.product-form textarea,
+.product-form select {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.add-btn {
+  background: #000;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
