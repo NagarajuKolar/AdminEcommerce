@@ -31,16 +31,17 @@ const [search,setsearch]=useState('')
     localStorage.setItem('wishlistitems', JSON.stringify(wishlist));
   }, [wishlist]);
 
-const [productList, setProductList] = useState([
-  { id: 1, img: image, title: 'denim', desc: "best fit denims",price : 2000,newprice : 2000,},
-  { id: 2, img: image, title: 'cisco', desc: "best fit denims" ,price: 3000,newprice : 2000},
-  { id: 3, img: image, title: 'Buffalo', desc: "best fit denims",price: 3000 ,newprice : 2000},
-  { id: 4, img: image, title: 'Nike', desc: "best fit denims",price: 3000,newprice : 2000},
-  { id: 5, img: image, title: 'Adidas', desc: "best fit denims",price: 3000,newprice : 2000},
-  { id: 6, img: image, title: 'raymond', desc: "best fit denims",price: 3000 ,newprice : 2000},
-  { id: 7, img: image, title: 'Ram-raj', desc: "best fit denims",price: 3000 ,newprice : 2000},
-  { id: 8, img: image, title: 'Rupa', desc: "best fit denims" ,price: 3000,newprice : 2000}
-]);
+const [productList, setProductList] = useState([]); 
+
+useEffect(() => {
+  const savedProducts = localStorage.getItem("productList");
+  if (savedProducts) {
+    setProductList(JSON.parse(savedProducts));
+  }
+}, []); 
+useEffect(() => {
+  localStorage.setItem("productList", JSON.stringify(productList));
+}, [productList]);
 
   const addtocart = (item,quantity=1) => {
     setcart((prevcart) => {

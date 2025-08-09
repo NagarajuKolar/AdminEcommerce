@@ -60,3 +60,26 @@ display: block;
   border-radius: 6px;
   cursor: pointer;
 }
+.product-table{
+  width: 90%;
+  margin: auto;
+}
+.edit-btn{
+  border:none;
+  background-color:blue;
+  color: white;
+  border-radius: 5px;
+      padding: 4px 10px;
+}
+.delete-btn{
+    border:none;
+  background-color:rgb(129 18 4 / 81%);
+  color: white;
+  border-radius: 5px;
+   padding: 4px 10px;
+
+
+}
+.product-table td {
+  vertical-align: middle;
+}

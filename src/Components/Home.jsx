@@ -7,14 +7,14 @@ import { useContext } from 'react'
 import '../CSS/Home.css'
 
 function Home() {
-    const { addtocart, addtowishlist, wishlist, removefromwishlist, isiteminwishlist, isitemincart, productList,search} = useContext(Cartcontext);
-const searchedproducts = productList.filter((item) => {
-  return (
-    item.title.toLowerCase().includes(search.toLowerCase()) ||
-    (item.category || "").toLowerCase().includes(search.toLowerCase())
-  );
-});
-  return (
+    const { addtocart, addtowishlist, wishlist, removefromwishlist, isiteminwishlist, isitemincart, productList, search } = useContext(Cartcontext);
+    const searchedproducts = productList.filter((item) => {
+        return (
+            item.title.toLowerCase().includes(search.toLowerCase()) ||
+            (item.category || "").toLowerCase().includes(search.toLowerCase())
+        );
+    });
+    return (
         <>
 
             <div className="container-fluid banner">
@@ -75,16 +75,18 @@ const searchedproducts = productList.filter((item) => {
                 </div>
             </div>
 
-            <div className="d-flex flex-wrap justify-content-center mt-4">
+            <div className="product-cards-container mt-4">
                 {searchedproducts.map((item, index) => (
 
-                    <div className="card mx-4 mb-4 " key={index} style={{ width: '19rem' }}>
+                    <div className="product-card mx-3 mb-4 " key={index} >
                         <Link to={`/${item.title}/${item.id}`}>
-                            <img src={item.img} className="card-img-top" alt="image" />
+                            <img src={item.image} className="card-img-top" alt="image" />
                         </Link>
                         <div className="card-body">
-                            <h5 className="card-title">{item.title}</h5>
-                            <p className="card-text">{item.desc}</p>
+                            <div className="card-top-content">
+                                <h5 className="card-title">{item.title}</h5>
+                                <p className="card-text">{item.desc}</p>
+                            </div>
                             <span onClick={() => { !isiteminwishlist(item) ? addtowishlist(item) : removefromwishlist(item) }}>
                                 <FaHeart size={30} className={`heart-icon ${isiteminwishlist(item) ? 'active' : ''}`} />
                             </span>
