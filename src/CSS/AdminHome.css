@@ -1,12 +1,21 @@
-.stats{
+.stats {
     display: flex;
-    gap: 1rem;
-    
+    gap: 2rem;
+
 }
-.stats div{
+
+.stats div {
     padding: 1rem;
     flex: 1;
-    background: linear-gradient(to right, #dab4d7, #b87777);
+    background: linear-gradient(to right, #441e41, #711b1b);
     border-radius: 10px;
+    color: white;
+    text-align: center;
 
+}
+
+.stats div p {
+    text-align: center;
+    font-size: 35px;
+    font-weight: 700;
 }

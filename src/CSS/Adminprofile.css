@@ -1,0 +1,87 @@
+.profile-box {
+    width: 60%;
+    margin: auto;
+    background-color: whitesmoke;
+    border-radius: 20px;
+    padding: 25px;
+}
+
+.profile-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.profile-head h3 {
+    font-size: 22px;
+    font-weight: 600;
+}
+
+
+.profile-edit {
+    border: none;
+    background-color: blue;
+    color: white;
+    padding: 4px 10px;
+    border-radius: 5px;
+}
+
+.fa-icon {
+    font-size: 120px;
+    color: #1d202061;
+    display: block;
+    margin: 5px auto
+}
+
+.profile-main {
+    display: flex;
+    flex-direction: column;
+    padding: 12px 20px;
+    
+}
+
+.profile-main input{
+    border:none;
+    color: red;
+    background-color: whitesmoke;
+}
+
+.profile-main div {
+    display: flex;
+    gap: 50px;
+    margin-bottom: 20px;
+    font-size: 22px;
+}
+.profile-main div:last-child {
+    display: flex;
+    gap: 60px;
+    margin-bottom: 20px;
+    font-size: 22px;
+}
+
+
+.update-btns{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+.profile-update,.profile-cancel{
+    border: none;
+    padding: 4px 6px;
+    border-radius: 6px;
+
+}
+.profile-update{
+    background-color: rgb(154, 100, 30);
+    color: white;
+}
+.profile-cancel{
+    background-color: rgb(14, 130, 83);
+    color: white;
+}
+.fullname{
+    text-align: center;
+    font-weight: 600;
+    margin-bottom: 30px ;
+}

@@ -15,6 +15,7 @@ import { useLocation } from 'react-router-dom';
 import AdminHome from './Components/AdminHome';
 import AdminUser from './Components/AdminUser';
 import AdminProducts from './Components/AdminProducts';
+import AdminProfile from './Components/AdminProfile';
 function App() {
   const location = useLocation()
 const hidenavbar = location.pathname.toLowerCase().startsWith('/admin');
@@ -38,6 +39,7 @@ const hidenavbar = location.pathname.toLowerCase().startsWith('/admin');
                 <Route index element={<AdminHome />}></Route>
                 <Route path="users" element={<AdminUser />}></Route>
                 <Route path="products" element={<AdminProducts />}></Route>
+                <Route path="profile" element={<AdminProfile/>}></Route>
               </Route>
 
 

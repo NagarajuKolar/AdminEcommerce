@@ -83,3 +83,8 @@ display: block;
 .product-table td {
   vertical-align: middle;
 }
+.td-Name{
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}

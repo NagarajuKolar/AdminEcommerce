@@ -144,9 +144,9 @@ const handlesubmit = (e) => {
                     </form>
                 </div>
             )}
-            <h2 style={{fontfamily : "serif"}}>Products</h2>
+            <h2 style={{fontFamily:700,fontSize:"25px"}}>Products</h2>
             <div className='product-table'>
-                <table className="table table-bordered table-striped text-center" >
+                <table className="table table-bordered table-striped text-center mt-3" >
                     <thead>
                         <tr>
                             <th>Name</th>
@@ -162,7 +162,10 @@ const handlesubmit = (e) => {
                         ) : (
                             productList.map((product, index) => (
                                 <tr key={index}>
-                                    <td> <img src={product.image} className="me-2" style={{width:"60px",height:"60px"}}/>{product.title}</td>
+                                    <td className='td-Name'> 
+                                        <img src={product.image} className="me-2" style={{width:"60px",height:"60px"}}/>
+                                        <span>{product.title}</span>
+                                        </td>
                                     <td>RS {product.price}</td>
                                     <td>{product.stock}</td>
                                     <td>{product.brand}</td>

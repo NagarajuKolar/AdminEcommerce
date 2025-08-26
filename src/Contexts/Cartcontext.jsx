@@ -6,10 +6,10 @@ export const Cartcontext = createContext();
 export const CartProvider = ({ children }) => {
   const [cart, setcart] = useState([]);
   const [wishlist, setwishlist] = useState([]);
-  const [checkoutItems, setcheckoutItems] =useState([]);
-const [search,setsearch]=useState('')
+  const [checkoutItems, setcheckoutItems] = useState([]);
+  const [search, setsearch] = useState('')
 
-  
+
   useEffect(() => {
     const storedCart = localStorage.getItem("cartitems");
     const storedWishlist = localStorage.getItem("wishlistitems");
@@ -31,23 +31,23 @@ const [search,setsearch]=useState('')
     localStorage.setItem('wishlistitems', JSON.stringify(wishlist));
   }, [wishlist]);
 
-const [productList, setProductList] = useState([]); 
+  const [productList, setProductList] = useState([]);
 
-useEffect(() => {
-  const savedProducts = localStorage.getItem("productList");
-  if (savedProducts) {
-    setProductList(JSON.parse(savedProducts));
-  }
-}, []); 
-useEffect(() => {
-  localStorage.setItem("productList", JSON.stringify(productList));
-}, [productList]);
+  useEffect(() => {
+    const savedProducts = localStorage.getItem("productList");
+    if (savedProducts) {
+      setProductList(JSON.parse(savedProducts));
+    }
+  }, []);
+  useEffect(() => {
+    localStorage.setItem("productList", JSON.stringify(productList));
+  }, [productList]);
 
-  const addtocart = (item,quantity=1) => {
+  const addtocart = (item, quantity = 1) => {
     setcart((prevcart) => {
       const alreadyincart = prevcart.find(carItem => carItem.id === item.id);
       if (!alreadyincart) {
-        const updatedcart = [...prevcart, {...item,quantity}]; //adding  item to prevcart
+        const updatedcart = [...prevcart, { ...item, quantity }]; //adding  item to prevcart
         return updatedcart;
       }
       else {
@@ -57,15 +57,15 @@ useEffect(() => {
     })
   };
 
-const removefromcart = (item) =>{
-  const cartStorage = JSON.parse(localStorage.getItem('cartitems')) || [];
-  const updatedcart = cartStorage.filter(wishlist => wishlist.id !== item.id);
-  setcart(updatedcart);
-  localStorage.setItem('cartitems', JSON.stringify(updatedcart));
-}
+  const removefromcart = (item) => {
+    const cartStorage = JSON.parse(localStorage.getItem('cartitems')) || [];
+    const updatedcart = cartStorage.filter(c => c.id !== item.id);
+    setcart(updatedcart);
+    localStorage.setItem('cartitems', JSON.stringify(updatedcart));
+  }
 
 
- 
+
   const addtowishlist = (item) => {
     setwishlist((prevwishlist) => {
       const alreadyinwishlist = prevwishlist.find(carItem => carItem.id === item.id);
@@ -106,7 +106,7 @@ const removefromcart = (item) =>{
   return (
     <Cartcontext.Provider value={{
       cart, addtocart, wishlist, addtowishlist, removefromcart,
-      removefromwishlist, isiteminwishlist, isitemincart,productList,setProductList,checkoutItems, setcheckoutItems,search,setsearch
+      removefromwishlist, isiteminwishlist, isitemincart, productList, setProductList, checkoutItems, setcheckoutItems, search, setsearch
     }}>
       {children}
     </Cartcontext.Provider>

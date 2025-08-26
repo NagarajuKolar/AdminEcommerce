@@ -22,18 +22,21 @@ function AdminDashboard() {
             </ul>
           </nav>
           <div className="profile">
-            <div className='profile-icon '><CgProfile /></div>
-            <div>{user ? user.fullname : "UserProfile"}</div>
+            <NavLink to="profile">
+              <div className='profile-icon '><CgProfile /></div>
+              <div className='username'>{user ? user.fullname : "UserProfile"}</div>
+            </NavLink>
           </div>
         </aside>
         <main className='admin-main'>
           <div className="main-headers">
             <h2>Admin Management</h2>
             <div className="header-icons">
-                <FaBell />
+              <FaBell />
               < FaUserAlt />
-            
+
             </div>
+
           </div>
           <Outlet />
         </main>

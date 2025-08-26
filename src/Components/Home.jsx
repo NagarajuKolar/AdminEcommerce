@@ -78,14 +78,18 @@ function Home() {
             <div className="product-cards-container mt-4">
                 {searchedproducts.map((item, index) => (
 
-                    <div className="product-card mx-3 mb-4 " key={index} >
+                    <div className="product-card mx-2 mb-4 mb-3" key={index} >
                         <Link to={`/${item.title}/${item.id}`}>
                             <img src={item.image} className="card-img-top" alt="image" />
                         </Link>
                         <div className="card-body">
                             <div className="card-top-content">
                                 <h5 className="card-title">{item.title}</h5>
-                                <p className="card-text">{item.desc}</p>
+                                <p className="card-text">
+                                    {item.desc.length > 60
+                                        ? item.desc.slice(0,60) + "..."
+                                        : item.desc}
+                                </p>
                             </div>
                             <span onClick={() => { !isiteminwishlist(item) ? addtowishlist(item) : removefromwishlist(item) }}>
                                 <FaHeart size={30} className={`heart-icon ${isiteminwishlist(item) ? 'active' : ''}`} />

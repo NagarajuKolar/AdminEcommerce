@@ -10,7 +10,7 @@ function AdminHome() {
     return (
 
         <>
-            <h1>Admin Dashboard </h1>
+            <h1 className='mb-4 fw-bold fs-3'>Admin Dashboard </h1>
             <div className="stats">
                     <div>
                         <h3>Total Users</h3>

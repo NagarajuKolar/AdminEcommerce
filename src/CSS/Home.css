@@ -110,14 +110,37 @@ body {
     padding-top: 60px;
 }
 
+.search-box {
+    position: relative;
+}
+
+.search-dropdown {
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    background: whitesmoke;
+
+}
+.search-dropdown li{
+    text-decoration: none;
+    list-style: none;
+    margin-bottom: 8px;
+    margin-top: 8px;
+    cursor: pointer;
+  
+}
+
+
 .product-cards-container {
     display: flex;
     flex-wrap: wrap;
-    
+        width: 100%;
+    ;
+
 }
 
 .product-card {
-     flex:0 0 19%;
+    flex: 0 0 18.9%;
     display: flex;
     flex-direction: column;
     height: 100%;
@@ -126,13 +149,14 @@ body {
     overflow: hidden;
     padding: 8px 8px;
     background-color: #dee1e3a6;
+    box-shadow: 3px 2px 8px 0px rgba(0,0,0,0.4);
+
 }
 
 
 .product-card img {
     height: 200px;
     width: 100%;
-    object-fit: cover;
     transition: all 0.8s ease-in-out;
     filter: contrast(150%);
     border-radius: 12px;
@@ -179,48 +203,53 @@ body {
 .card-buttons {
     display: flex;
     gap: 10px;
-    margin-top: auto; 
+    margin-top: auto;
 }
+
 .card-buttons .btn {
     flex: 1;
     text-align: center;
 }
-.card-img-top{
+
+.card-img-top {
     transition: all 0.5s ease-in-out;
     filter: contrast(150%);
-    
+
 }
 
-.card-img-top:hover{
+.card-img-top:hover {
     filter: contrast(80%);
     transform: scale(1.02);
     box-shadow: 0 10px 10px rgba(23, 15, 15, 0.35);
     overflow: hidden;
     background-position: bottom;
 }
+
 /* Login section */
-.login-section{
+.login-section {
     width: 100%;
     height: 100%;
     margin: 0;
     background-color: rgb(91 80 80 / 76%);
     display: flex;
-    gap:20px;
+    gap: 20px;
     z-index: 1031;
     position: fixed;
     top: 0;
-      opacity: 0;
-  visibility: hidden;
-  transform: translateY(-30px);
-  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-30px);
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
 
 }
+
 .login-section.show {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
 }
-.login-form{
+
+.login-form {
     width: 600px;
     padding: 25px 15px;
     margin: auto;
@@ -229,102 +258,119 @@ body {
 }
 
 .register input[type='text'] {
-  display: block;
-  margin-bottom: 10px;
+    display: block;
+    margin-bottom: 10px;
 }
-.register input[type='text']{
+
+.register input[type='text'] {
     width: 100%;
     border-radius: 10px;
     padding: 10px;
     border: 1px solid gray;
 }
-.forgot{
+
+.forgot {
     display: flex;
-    justify-content:space-between;
+    justify-content: space-between;
     margin-top: 18px;
-    align-items:center;
+    align-items: center;
 }
-.logins{
+
+.logins {
     display: flex;
-    justify-content:space-between;
+    justify-content: space-between;
     align-items: center;
     margin-top: 15px;
 
 }
-.forgot a,.logins a{
+
+.forgot a,
+.logins a {
     text-decoration: none;
     color: black;
 }
-.logins a{
+
+.logins a {
     font-size: 18px;
     font-family: math;
     font-weight: 600;
 }
-.logins button{
+
+.logins button {
     padding: 8px 15px;
     border-radius: 8px;
     background-color: #ffd783;
     border: none;
 
 }
-.form-headers{
+
+.form-headers {
     display: flex;
     justify-content: space-between;
     margin-bottom: 8px;
 }
-.form-headers .close{
+
+.form-headers .close {
     font-size: 26px;
     color: red;
     cursor: pointer;
 }
+
 /* Register-section */
 
-.register-section{
+.register-section {
     width: 100%;
     height: 100%;
     margin: 0;
     background-color: rgb(91 80 80 / 76%);
     display: flex;
-    gap:20px;
+    gap: 20px;
     z-index: 1031;
     position: fixed;
     top: 0;
-      opacity: 0;
-  visibility: hidden;
-  transform: translateY(-30px);
-  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-30px);
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
 
 }
+
 .register-section.show {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
 }
-.register{
+
+.register {
     width: 900px;
     padding: 25px 15px;
     margin: auto;
     background-color: whitesmoke;
     border-radius: 15px;
 }
-form label{
+
+form label {
     display: block;
 
-        color: black;
+    color: black;
 }
-.row{
+
+.row {
     display: flex;
     gap: 20px;
-   align-items: flex-start;
-       margin-bottom: 20px;
-       flex-wrap: wrap;
+    align-items: flex-start;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
 }
-.col{
-    width:48%;
+
+.col {
+    width: 48%;
 }
-.col-full{
+
+.col-full {
     width: 100%;
 }
+
 form input,
 form select {
     width: 100%;
@@ -335,6 +381,7 @@ form select {
     color: #333;
     background-color: #fff;
 }
+
 .form-footer {
     display: flex;
     justify-content: space-between;
@@ -364,24 +411,27 @@ form select {
     cursor: pointer;
     transition: background-color 0.3s;
 }
-.closeregister{
+
+.closeregister {
     font-size: 26px;
     margin-bottom: 8px;
     display: flex;
     justify-content: flex-end;
-    color:red;
-    cursor:pointer;
+    color: red;
+    cursor: pointer;
 }
 
 
-@media (max-width:940px){
-    .banner{
+@media (max-width:940px) {
+    .banner {
         flex-direction: column-reverse;
     }
-    .left-text{
+
+    .left-text {
         width: 98%;
     }
-    .right{
+
+    .right {
         width: 100%;
     }
 }

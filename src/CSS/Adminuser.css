@@ -1,0 +1,30 @@
+.admin-user h1 {
+    font-size: 23px;
+    font-weight: 600;
+    color: #1d346e;
+}
+.users-box{
+        display: flex;
+    color: white;
+    border-radius: 10px;
+    align-items: center;
+    text-align: center;
+    margin-top: 40px;
+    flex-wrap: wrap;
+    padding: 10px 50px;
+    gap: 30px;
+    
+}
+.users-box div{
+    background: linear-gradient(to left,blue,red);
+    padding: 16px;
+    border-radius: 15px;
+    flex: 1 1;
+    gap: 20px;
+}
+.users-box div p{
+    font-size: 30px;
+    font-weight: 600;
+    color: black;
+}
+

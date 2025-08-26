@@ -24,6 +24,20 @@ function Navbar() {
   });
   const [errors, seterrors] = useState({});
   const [loginData, setLoginData] = useState({ email: '', password: '' });
+  const [showautocomplete, setshowautocomplete] = useState(false)
+
+
+  const searchedproducts = productList.filter((item) => {
+    return (
+      item.title.toLowerCase().includes(search.toLowerCase()) ||
+      (item.category || "").toLowerCase().includes(search.toLowerCase())
+    );
+  });
+
+  const handleSuggestionClick = (value) => {
+    setsearch(value);
+    setshowautocomplete(false);
+  };
 
   const handleChange = (e) => {
     setFormData({
@@ -93,23 +107,23 @@ function Navbar() {
     }
   };
 
-    const handlelogout = () =>{
-    const success=logout()
-    if(success){
+  const handlelogout = () => {
+    const success = logout()
+    if (success) {
       navigate('/')
     }
-    else{
+    else {
       alert('failed to logout')
     }
-    
+
   }
   const handleSubmit = (e) => {
     e.preventDefault();
     const isValid = Validate();
     if (isValid) {
-    const existingUsers = JSON.parse(localStorage.getItem('registeredUser')) || [];
-    existingUsers.push(formData);
-    localStorage.setItem('registeredUser', JSON.stringify(existingUsers));
+      const existingUsers = JSON.parse(localStorage.getItem('registeredUser')) || [];
+      existingUsers.push(formData);
+      localStorage.setItem('registeredUser', JSON.stringify(existingUsers));
       alert("Registered successfully!");
       setFormData({
         fullname: '',
@@ -142,10 +156,32 @@ function Navbar() {
 
       <div className="container-fluid bg-dark  fixed-top">
         <header className="d-flex flex-wrap justify-content-center py-2 mb-1 ">
+
           <form className=" d-flex align-items-center mb-3 ms-md-5 mb-md-0 me-md-auto  " role="search">
-            <input type="search" className="form-control form-control-dark text-bg-white"
-              placeholder="Search..." aria-label="Search"
-              style={{ width: '400px' }} id="searchinput" value={search} onChange={(e) => setsearch(e.target.value)} />
+            <div className="search-box">
+              <input type="search" className="form-control form-control-dark text-bg-white"
+                placeholder="Search..." aria-label="Search"
+                style={{ width: '400px' }} id="searchinput" value={search}
+                onChange={(e) => {
+                  setsearch(e.target.value);
+                  setshowautocomplete(true)
+                }}
+              />
+              {showautocomplete && search && (
+                <ul className="search-dropdown">
+                  {searchedproducts.length > 0 ? (
+                    searchedproducts.map((item, index) => (
+                      <li key={index} onClick={() => handleSuggestionClick(item.title)}>
+                        {item.title} 
+                      </li>
+                    ))
+                  ) : (
+                    <li className="no-result">No results found</li>
+                  )}
+                </ul>
+
+              )}
+            </div>
           </form>
 
 

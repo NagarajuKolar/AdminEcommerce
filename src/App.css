@@ -2,6 +2,7 @@ body {
   background-color: white;
   color: black;
   transition: 0.3s ease;
+  overflow-x: hidden;
 }
 
 body.dark {

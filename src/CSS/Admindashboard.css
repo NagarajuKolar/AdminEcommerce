@@ -12,25 +12,35 @@
   position: fixed;
   height: 100vh; 
   top: 0;
+  background: linear-gradient(254deg, #9ca4cc, #17255aba);
 }
 
 .admin-main {
-  width: calc(100% - 280px);
-  padding: 1rem;
-  margin-left: 280px;
-  top: 30px;
+    width: calc(100% - 280px);
+    padding: 1rem;
+    margin-left: 280px;
+    height: 100vh;
+    background: radial-gradient(black, transparent);
+    position: fixed;
+    top: 0px;
+    overflow-y: auto;
 }
 
-
+.admin-sidebar h3{
+    font-weight: 600;
+    color: white;
+    text-align: center;
+}
 
 aside nav ul {
     list-style: none;
-    padding: 10px;
-    font-size: 22px;
+    padding: 20px;
+    font-size: 24px;
 }
 
 aside nav ul li {
-    margin-bottom: 10px;
+    margin-bottom: 20px;
+    
 }
 
 aside nav ul li a {
@@ -40,15 +50,21 @@ aside nav ul li a {
 
 aside nav ul li a.active {
     font-weight: bold;
-    color: blue;
+    color:white;
 }
-.profile{
+.profile a {
     display:flex;
     gap:10px;
     align-items:center;
     position:fixed;
     bottom: 10px;
     font-size: 20px;
+    text-decoration: none;
+    color: white;
+}
+.profile .username {
+ vertical-align: middle;
+ font-size: 24px;
 }
 .profile-icon{
     font-size: 25px;
@@ -57,6 +73,10 @@ aside nav ul li a.active {
     display: flex;
     justify-content: space-between;
     align-items: center;
+     background: #ff00002e;
+    padding: 6px 20px;
+    border-radius: 10px;
+    margin-bottom: 30px;
 }
 .header-icons{
     display: flex;
