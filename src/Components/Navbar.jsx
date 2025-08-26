@@ -172,7 +172,7 @@ function Navbar() {
                   {searchedproducts.length > 0 ? (
                     searchedproducts.map((item, index) => (
                       <li key={index} onClick={() => handleSuggestionClick(item.title)}>
-                        {item.title} 
+                        {item.title}
                       </li>
                     ))
                   ) : (
@@ -189,6 +189,11 @@ function Navbar() {
             <li className="nav-item">
               <Link to="/" className="nav-link " aria-current="page">
                 Home
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link to="/admin" className="nav-link " aria-current="page">
+                Admin Panel
               </Link>
             </li>
             <li className="nav-item">
