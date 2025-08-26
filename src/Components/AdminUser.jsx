@@ -1,5 +1,5 @@
 import React from 'react'
-import '../CSS/AdminUser.css'
+import '../CSS/Adminuser.css'
 function AdminUser() {
   const totalusers = JSON.parse(localStorage.getItem('registeredUser'));
   return (
